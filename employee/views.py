@@ -30,6 +30,12 @@ class EmployeeListView(generics.ListCreateAPIView):
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
     
+class EmployeeUpdateView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated, )
+    
+    serializer_class = EmployeeSerializer
+    queryset = Employee.objects.all()
+    
 
 
 # class TestView(APIView):
