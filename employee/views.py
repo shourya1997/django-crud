@@ -10,50 +10,25 @@ from rest_framework import generics
 from .serializers import EmployeeSerializer
 from .models import Employee 
 
-class EmployeeView(mixins.ListModelMixin,
-               mixins.CreateModelMixin,
-               generics.GenericAPIView):
+# TODO: Employee login
+
+# Add employee 
+# post
+class EmployeeCreateView(generics.CreateAPIView):
+    permission_classes = (IsAuthenticated, )
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
 
-    def get(self, request, *args, **kwargs):
-        return self.list(self, request, *args, **kwargs)
-    
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
-    
-class EmployeeCreateView(generics.CreateAPIView):
-    serializer_class = EmployeeSerializer
-    queryset = Employee.objects.all()
-    
+# View all employee
 class EmployeeListView(generics.ListCreateAPIView):
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
-    
+
+# View, Update, Delete employee instance
+# get, put, patch, delete
 class EmployeeUpdateView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
-    
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
-    
-
-
-# class TestView(APIView):
-
-#     permission_classes = (IsAuthenticated, )
-
-#     def get(self, request, *args, **kwargs):
-#         qs = Employee.objects.all()
-#         employee = qs.first()
-#         serializer = EmployeeSerializer(qs, many=True)
-#         # serializer = EmployeeSerializer(employee)
-#         return Response(serializer.data)
-
-#     def post(self, request, *args, **kwargs):
-#         serializer = EmployeeSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response(serializer.errors)
 
 

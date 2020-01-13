@@ -26,5 +26,4 @@ urlpatterns = [
     path('', EmployeeListView.as_view(), name='list'),
     path('update/<int:pk>', EmployeeUpdateView.as_view(), name='list'),
     path('api/token/', obtain_auth_token, name='obtain-token'),
-
 ]
