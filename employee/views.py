@@ -10,7 +10,7 @@ from rest_framework import generics
 from .serializers import EmployeeSerializer
 from .models import Employee 
 
-# TODO: Employee login
+# TODO: Custom Employee login
 
 # Add employee 
 # post
