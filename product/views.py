@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import mixins
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import ProductSerializer
 from .models import Product 
@@ -14,7 +15,7 @@ from .models import Product
 # Add Product 
 # post
 class ProductCreateView(generics.CreateAPIView):
-    # permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
 
@@ -26,6 +27,6 @@ class ProductListView(generics.ListAPIView):
 # View, Update, Delete Product instance
 # get, put, patch, delete
 class ProductUpdateView(generics.RetrieveUpdateDestroyAPIView):
-    # permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
