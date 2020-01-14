@@ -12,7 +12,7 @@ from .serializers import EmployeeSerializer
 from .models import Employee 
 from .forms import UserLoginForm, UserRegisterForm
 
-# TODO: Custom Employee login
+
 def login_view(request):
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
