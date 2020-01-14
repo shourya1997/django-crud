@@ -134,5 +134,5 @@ REST_FRAMEWORK = {
 }
 
 SWAGGER_SETTINGS = {
-   'DEFAULT_INFO': 'crud.urls.api_info',
+   'DEFAULT_INFO': 'crud.swagger.api_info',
 }
