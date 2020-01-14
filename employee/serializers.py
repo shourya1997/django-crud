@@ -5,5 +5,5 @@ class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         fields = (
-            'name', 'email', 'e_id'
+            'username','name', 'email', 'e_id', 'is_admin', 'is_staff'
         )
