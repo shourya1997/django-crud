@@ -1,0 +1,419 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Snippets API",
+        "description": "Test description",
+        "termsOfService": "https://www.google.com/policies/terms/",
+        "contact": {
+            "email": "contact@snippets.local"
+        },
+        "license": {
+            "name": "BSD License"
+        },
+        "version": "v1"
+    },
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "Basic": {
+            "type": "basic"
+        }
+    },
+    "security": [
+        {
+            "Basic": []
+        }
+    ],
+    "paths": {
+        "/e/api/token": {
+            "post": {
+                "operationId": "e_api_token_create",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "parameters": []
+        },
+        "/e/create": {
+            "post": {
+                "operationId": "e_create_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "parameters": []
+        },
+        "/e/list": {
+            "get": {
+                "operationId": "e_list_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Employee"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "parameters": []
+        },
+        "/e/update/{e_id}": {
+            "get": {
+                "operationId": "e_update_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "put": {
+                "operationId": "e_update_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "patch": {
+                "operationId": "e_update_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "delete": {
+                "operationId": "e_update_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "e"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "e_id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this user.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        },
+        "/p/create": {
+            "post": {
+                "operationId": "p_create_create",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "parameters": []
+        },
+        "/p/list": {
+            "get": {
+                "operationId": "p_list_list",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "parameters": []
+        },
+        "/p/update/{id}": {
+            "get": {
+                "operationId": "p_update_read",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "put": {
+                "operationId": "p_update_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "patch": {
+                "operationId": "p_update_partial_update",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "delete": {
+                "operationId": "p_update_delete",
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "p"
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "A unique integer value identifying this product.",
+                    "required": true,
+                    "type": "integer"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "Employee": {
+            "required": [
+                "username",
+                "name",
+                "email"
+            ],
+            "type": "object",
+            "properties": {
+                "username": {
+                    "title": "Username",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9.+-]*$",
+                    "maxLength": 100,
+                    "minLength": 1
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 100,
+                    "minLength": 1
+                },
+                "email": {
+                    "title": "Email address",
+                    "type": "string",
+                    "format": "email",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "e_id": {
+                    "title": "E id",
+                    "type": "integer",
+                    "readOnly": true
+                },
+                "is_admin": {
+                    "title": "Is admin",
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "is_staff": {
+                    "title": "Is staff",
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                }
+            }
+        },
+        "Product": {
+            "required": [
+                "name",
+                "price",
+                "stock",
+                "category"
+            ],
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "maxLength": 120,
+                    "minLength": 1
+                },
+                "price": {
+                    "title": "Price",
+                    "type": "integer"
+                },
+                "stock": {
+                    "title": "Stock",
+                    "type": "integer"
+                },
+                "category": {
+                    "title": "Category",
+                    "type": "string",
+                    "maxLength": 120,
+                    "minLength": 1
+                },
+                "id": {
+                    "title": "Id",
+                    "type": "integer",
+                    "readOnly": true
+                }
+            }
+        }
+    }
+}
