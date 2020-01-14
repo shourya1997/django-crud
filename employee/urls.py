@@ -8,13 +8,9 @@ urlpatterns = [
     path('e/create', EmployeeCreateView.as_view(), name='test'),
     path('e/list', EmployeeListView.as_view(), name='list'),
     path('e/update/<int:pk>', EmployeeUpdateView.as_view(), name='list'),
-    path('e/api/token', obtain_auth_token, name='obtain-token'),
-<<<<<<< HEAD
-    
-=======
+    path('e/api/token', obtain_auth_token, name='obtain-token'),    
     path('e/login', login_view, name='login'),
     path('e/logout', logout_view, name='logout'),
     path('e/register', register_view, name='register'),
 
->>>>>>> custom-user
 ]
