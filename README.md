@@ -22,3 +22,5 @@ $ pip install -r requirements.txt
 
 $ python manage.py runserver 
 ```
+
+Then go to [127.0.0.1:8000](127.0.0.1:8000) in your browser.
