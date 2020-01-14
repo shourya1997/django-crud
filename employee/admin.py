@@ -1,6 +1,27 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group, User
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-# Register your models here.
 from .models import Employee
+from .forms import UserRegisterForm
 
-admin.site.register(Employee)
+class UserAdmin(BaseUserAdmin):
+    add_form = UserRegisterForm
+    
+    list_display = ('name','username','email','is_admin')
+    list_filter = ('is_admin',)
+    
+    fieldsets = (
+        (None, {'fields':('username','email','password')}),
+        ('Permissions',{'fields':('is_admin',)})
+    )
+    
+    search_fields = ('name','username', 'email')
+    ordering = ('name','username','email')
+    
+    filter_horizontal = ()
+    
+
+admin.site.register(Employee, UserAdmin)
+admin.site.unregister(Group)
+
